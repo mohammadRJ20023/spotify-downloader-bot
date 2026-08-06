@@ -9,7 +9,7 @@ load_dotenv()
 
 
 # Telegram Bot
-BOT_TOKEN = os.getenv(BOT_TOKEN)
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 # PostgreSQL
 DB_HOST = os.getenv("DB_HOST")

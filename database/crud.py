@@ -29,3 +29,14 @@ def get_user_by_telegram_id(db : Session, telegram_id : int) ->User | None :
     result = db.execute(statement)
     
     return result.one_or_none()
+
+
+def get_or_create_user(db: Session, telegram_id : int , first_name : str, username : str | None = None):
+    
+    user = get_user_by_telegram_id(db , telegram_id)
+    
+    if user is not None :
+        return user
+    
+    return create_user(db, telegram_id, first_name, username)
+        
